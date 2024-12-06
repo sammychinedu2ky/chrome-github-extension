@@ -7,7 +7,7 @@ function validatePR(username) {
         // Loop through all mutations
         mutations.forEach((mutation) => {
             const allText = document.body.textContent;
-            if (allText.includes("Conflicting files")) {
+            if (allText.includes("Conflicting files") && !window.location.href.includes(content.js)) {
                 alert("There are conflicting files in the PR. Please resolve them before merging.");
                 observer.disconnect();
             }
