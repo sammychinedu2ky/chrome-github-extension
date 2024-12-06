@@ -1,5 +1,6 @@
 const titleFormat = /^DEV-\d+\*? - .+$/;
 function validatePR(username) {
+    // if (!window.location.href.includes("pull") && !window.location.href.includes("Green-Places")) return;
     let allText = document.body.innerText;
 
     // CHECK FOR MERGE CONFLICTS
