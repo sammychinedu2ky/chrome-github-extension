@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const inputField = document.getElementById('github-username');
     const saveButton = document.getElementById('save');
-
-    // Load the saved username and set it as the placeholder
+    //chrome.storage.sync.set({ githubUsername: 'sammychinedu2ky' });
     chrome.storage.sync.get(['githubUsername'], (result) => {
         if (result.githubUsername) {
             inputField.placeholder = result.githubUsername;
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (username) {
             chrome.storage.sync.set({ githubUsername: username }, () => {
                 console.log('Username saved:', username);
-                // Optionally provide user feedback
                 alert('Username saved successfully!');
             });
         } else {
